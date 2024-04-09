@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Bootstrap CSS -->
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Font Awesome CSS (consistent with version 6) -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+     <!-- Some  jQuery thing -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <!-- Font Awesome JS (consistent with version 6) -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAZY-ROOMS</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+          <div class="logo">EAZY-ROOMS<i class="fa-brands fa-airbnb fa-lg"></i>
+          </div>
+          <ul class="navtext">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Rooms</a></li>
+            <li><a href="https://www.linkedin.com/feed/">Contact</a></li>
+          </ul>
+        </div>
+         
+    </nav>
+    <!-- THE BANNER WITH THE FORM --> 
+    <div class="banner">
+        <h1>EAZY-ROOMS HOTEL BOOKING </h1>
+        <p>The Best Rooms Available</p>
+        <form id='searchform'>
+            <label for="search">Search:</label>
+            <input type='text' id="search" name='search'></input>
+            <button type="submit">Search Room</button>
+        </form>
+    </div>
+<!-- THE EXPECTED PLACE TO DISPLAY SEARCHED DATA IF THAT MAKES SENSE -->
+    <div class="container">
+        <div class="section-title"></div>
+        <div class="row"></div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+
+<!-- PAYMENT METHODS HERE -->
+    <h8>Select Method of Payment</h8>
+    <div id ="payment-methods-container">
+ 
+    </div>
+
+
+    <!-- DRINKS CARD -->
+    <div class="containers1">
+        <div class="row">
+            <div class="slate1">
+                <div class="card shadow-lg border-0 p-4 custom-card">
+                    <article class="service">
+                        <a href="/assets/images/preview-page0.jpg" id="photo-link">Click here to see the menu</a>
+                        <div id="photo-container"></div>
+                        <span> <i class="fa-solid fa-martini-glass-citrus fa-beat-fade"
+                                style="color: #74C0FC;"></i></span>
+                        <h6>Free Drink</h6>
+                        <p>The most Refreshing drinks all round</p>
+                    </article>
+                </div>
+            </div>
+            <!-- ADVENTURES CARD -->
+            <div class="slate2">
+                <div class="card shadow-lg border-0 p-4">
+                    <article class="service">
+                        <a href="/assets/images/adventure.jpg" id="photo-link1">Go on many Adventures</a>
+                        <div id="photo-container1"></div>
+                        <span><i class="fa-solid fa-person-hiking fa-beat-fade" style="color: #B197FC;"></i></span>
+                        <h6>Endless Adventures</h6>
+                        <p>Explore different places and see different places</p>
+                    </article>
+                </div>
+            </div>
+            <!-- TRANSPORT CARD -->
+            <div class="slate3">
+                <div class="card shadow-lg border-0 p-4">
+                    <article class="service">
+                        <a href="/assets/images/cars.jpg" id="photo-link2">Experience our many transport means</a>
+                        <div id="photo-container2"></div>
+                        <span><i class="fa-solid fa-car fa-beat-fade" style="color: #B197FC;"></i></span>
+                        <h6>Transport </h6>
+                        <p>Get your own transportation and a car of your choice</p>
+                    </article>
+                </div>
+            </div>
+            <!-- GAMES CARD -->
+            <div class="slate4">
+                <div class="card shadow-lg border-0 p-4">
+                    <article class="service">
+                        <a href="/assets/images/Indoor Games.jpg" id="photo-link3">With our Many Available Games</a>
+                        <div id="photo-container3"></div>
+                        <span><i class="fa-solid fa-gamepad fa-beat-fade" style="color: #B197FC;"></i></span>
+                        <h6>Free Games</h6>
+                        <p>Our games are open to all and sundry</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer obtained from another app with the like short explanations and links -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online booking</h4>
+                    <ul>
+                        <li><a href="#">suite</a></li>
+                        <li><a href="#">single room</a></li>
+                        <li><a href="#">double room</a></li>
+                        <li><a href="#">extra services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark text-white d-flex d-row justify-content-around align-items-center flex-wrap">
+            <div>
+                <p class="text-center pt-3">© 2024 EAZY-ROOMS Booking App. All Right Reserved</p>
+            </div>
+            <div>
+                <ul class="list-unstyled d-flex d-row flex-wrap">
+                    <li class="mx-2 mt-2">Warranty Policy</li>
+                    <li class="mx-2 mt-2">Term of Use</li>
+                    <li class="mx-2 mt-2">Privacy Policy</li>
+                    <li class="mx-2 mt-2"><a href="https://www.linkedin.com/feed/">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+ <!-- JS FILE -->
+    <script src="index.js"></script>
+</body>
+</html>
