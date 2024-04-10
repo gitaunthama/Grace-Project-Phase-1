@@ -1,91 +1,84 @@
 {
-    "hotels": [
-      {
-        "id": 1,
-        "name": "Luxury Palace Hotel",
-        "location": "France",
-        "rating": 4.5,
-        "rooms": [
-          {
-            "type": "Single-room",
-            "available": true,
-            "price_per_night": 150,
-            "photo-url":"http://glitz.bangkokhotel24.com/data/Pics/OriginalPhoto/1172/117231/117231646/glitz-hotel-bangkok-pic-5.JPEG"
-          },
-          {
-            "type": "Double-room",
-            "available": true,
-            "price_per_night": 200,
-            "photo-url":"https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-080006/large_ex-double-2.jpg"
-          },
-          {
-            "type": "Suite",
-            "available": false,
-            "price_per_night": 500,
-            "photo-url":"https://i.insider.com/5b50e40d7708e935033b7b68?width=1000&format=jpeg&auto=webpg"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Coastal Paradise Resort",
-        "location": "Spain",
-        "rating": 4.2,
-        "rooms": [
-          {
-            "type": "single",
-            "available": true,
-            "price_per_night": 100
-          },
-          {
-            "type": "double",
-            "available": true,
-            "price_per_night": 150
-          },
-          {
-            "type": "suite",
-            "available": true,
-            "price_per_night": 400
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Mountain View Lodge",
-        "location": "Canada",
-        "rating": 4.0,
-        "rooms": [
-          {
-            "type": "single",
-            "available": true,
-            "price_per_night": 80
-          },
-          {
-            "type": "double",
-            "available": false,
-            "price_per_night": 120
-          },
-          {
-            "type": "suite",
-            "available": true,
-            "price_per_night": 300
-          }
-        ]
-      }
-    ],
-    "payment-method": [
-        {
-            "id": 1,
-            "name": "Credit Card"
+  "hotels": [{
+      "id": 1,
+      "name": "Luxury Palace Hotel",
+      "location": "France",
+      "rating": 4.5,
+      "rooms": [{
+          "type": "Single-room",
+          "available": true,
+          "price_per_night": 150,
+          "photo-url": "http://glitz.bangkokhotel24.com/data/Pics/OriginalPhoto/1172/117231/117231646/glitz-hotel-bangkok-pic-5.JPEG"
         },
         {
-            "id": 2,
-            "name": "Cash"
+          "type": "Double-room",
+          "available": true,
+          "price_per_night": 200,
+          "photo-url": "https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-080006/large_ex-double-2.jpg"
         },
         {
-            "id": 3,
-            "name": "Mobile Money"
+          "type": "Suite",
+          "available": false,
+          "price_per_night": 500,
+          "photo-url": "https://i.insider.com/5b50e40d7708e935033b7b68?width=1000&format=jpeg&auto=webpg"
         }
-    ]
-  }
-  
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Coastal Paradise Resort",
+      "location": "Spain",
+      "rating": 4.2,
+      "rooms": [{
+          "type": "single",
+          "available": true,
+          "price_per_night": 100
+        },
+        {
+          "type": "double",
+          "available": true,
+          "price_per_night": 150
+        },
+        {
+          "type": "suite",
+          "available": true,
+          "price_per_night": 400
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Mountain View Lodge",
+      "location": "Canada",
+      "rating": 4.0,
+      "rooms": [{
+          "type": "single",
+          "available": true,
+          "price_per_night": 80
+        },
+        {
+          "type": "double",
+          "available": false,
+          "price_per_night": 120
+        },
+        {
+          "type": "suite",
+          "available": true,
+          "price_per_night": 300
+        }
+      ]
+    }
+  ],
+  "payment-method": [{
+      "id": "Credit-Card"
+
+    },
+    {
+      "id": "Mobile-Money"
+
+    },
+    {
+      "id": "Cash-Payment"
+    }
+  ]
+}

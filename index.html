@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <!-- Bootstrap CSS -->
-     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-     <!-- Font Awesome CSS (consistent with version 6) -->
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-     <!-- Some  jQuery thing -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <!-- Font Awesome JS (consistent with version 6) -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS (consistent with version 6) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Some  jQuery thing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Font Awesome JS (consistent with version 6) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
     <link rel="stylesheet" href="index.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EAZY-ROOMS</title>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="navdiv">
-          <div class="logo">EAZY-ROOMS<i class="fa-brands fa-airbnb fa-lg"></i>
-          </div>
-          <ul class="navtext">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Rooms</a></li>
-            <li><a href="https://www.linkedin.com/feed/">Contact</a></li>
-          </ul>
+            <div class="logo">EAZY-ROOMS<i class="fa-brands fa-airbnb fa-lg"></i>
+            </div>
+            <ul class="navtext">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Rooms</a></li>
+                <li><a href="https://www.linkedin.com/feed/">Contact</a></li>
+            </ul>
         </div>
-         
+
     </nav>
-    <!-- THE BANNER WITH THE FORM --> 
+    <!-- THE BANNER WITH THE FORM -->
     <div class="banner">
         <h1>EAZY-ROOMS HOTEL BOOKING </h1>
         <p>The Best Rooms Available</p>
@@ -36,12 +38,20 @@
             <label for="search">Search:</label>
             <input type='text' id="search" name='search'></input>
             <button type="submit">Search Room</button>
+            <div id="search-results"></div>
+            <div id="error_message"></div>
         </form>
-    </div>
-<!-- THE EXPECTED PLACE TO DISPLAY SEARCHED DATA IF THAT MAKES SENSE -->
-    <div class="container">
-        <div class="section-title"></div>
-        <div class="row"></div>
+        <!-- PAYMENT METHODS HERE -->
+        <form id="payment-method-form">
+            <div>
+                <span1>Payment Means</span1>
+            </div>
+            <button class="payment-method-button" data-paymentmethod="creditCard">Credit Card</button>
+            <button class="payment-method-button" data-paymentmethod="mobileMoney">Mobile Money</button>
+            <button class="payment-method-button" data-paymentmethod="cashPayment">Cash Payment</button>
+        </form>
+
+
     </div>
 
     <div class="container">
@@ -51,11 +61,8 @@
     </div>
 
 
-<!-- PAYMENT METHODS HERE -->
-    <h8>Select Method of Payment</h8>
-    <div id ="payment-methods-container">
- 
-    </div>
+
+
 
 
     <!-- DRINKS CARD -->
@@ -129,7 +136,7 @@
                     <h4>get help</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="#">payment options</a></li>
+                        <li><a href="http://localhost:3000/payment-method">payment options</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -165,7 +172,8 @@
             </div>
         </div>
     </footer>
- <!-- JS FILE -->
+    <!-- JS FILE -->
     <script src="index.js"></script>
 </body>
+
 </html>
