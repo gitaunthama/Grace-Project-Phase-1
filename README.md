@@ -13,7 +13,10 @@
 You can as well choose a method of payment and  click on it.
 The booking service offers different services such as games and transportation among many others.
 The services come with a list of available ammenities which you can decide on when you arrive at hotel.
-The user is only allowed to see the available ammenities and rooms in the hotel.</p>
+The user is only allowed to see the available ammenities and rooms in the hotel.
+This platform is designed to help you explore what's available, 
+Enjoy your exploration!
+</p>
 
  
 ## Installation

@@ -1,36 +1,40 @@
+// Wait till the document is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
+    // Get all the elements we'll need
     const searchForm = document.getElementById('searchform');
     const searchInput = document.getElementById('search');
     const searchResultsContainer = document.getElementById('search-results');
     const errorContainer = document.getElementById('error_message');
-
+    
+    // Listen for form submissions
     searchForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); // Prevent the default form submit action
 
-        // Retrieve search query entered by the user
+        // Get the user's search query
         const searchQuery = searchInput.value.trim().toLowerCase();
 
-        // Clear previous search results and error message
+        // Ensure previous search results and error messages are cleared
         searchResultsContainer.innerHTML = '';
         errorContainer.innerHTML = '';
 
-        // Fetch data from the API
+        // Fetch data from the API based on searchQuery
         fetch(`http://localhost:3000/hotels?name_like=${searchQuery}`)
-
-            .then(response => response.json())
+            .then(response => response.json()) // Convert API response into JSON
             .then(data1 => {
+                // Check if the search returned results
                 if (data1.length === 0) {
+                    // Inform user if no results found
                     document.getElementById('search-results').textContent = 'No results found'
-
-                } else  {
-                    // Display all data about the room
+                } else {
+                    // If results found, create elements and add to DOM
                     data1.forEach(room => {
+                        // Create each element and set its text content
                         const roomDetails = document.createElement('div');
-                        roomDetails.classList.add('room-details');
+                        roomDetails.classList.add('room-details'); // Add necessary classes
 
                         const name = document.createElement('h2');
-                        name.textContent = `Room Name: ${room.name}`;
-                        roomDetails.appendChild(name);
+                        name.textContent = `Room Name: ${room.name}`; // Set text content to match result data
+                        roomDetails.appendChild(name); // Add to parent container
 
                         const type = document.createElement('p');
                         type.textContent = `Room Type: ${room.type}`;
@@ -40,29 +44,32 @@ document.addEventListener('DOMContentLoaded', function () {
                         price.textContent = `Price: ${room.price}`;
                         roomDetails.appendChild(price);
 
-                        // Display photos
+                        // Iterate through each photo
                         room.photos.forEach(photo => {
                             const img = document.createElement('img');
-                            img.src = photo.url;
-                            img.alt = photo.alt;
+                            img.src = photo.url; // Set image source URL
+                            img.alt = photo.alt; // Set alt text for accessibility
                             roomDetails.appendChild(img);
                         });
 
+                        // Append the room details to the results container
                         searchResultsContainer.appendChild(roomDetails);
                     });
                 }
             })
+            // Catch and handle errors
             .catch(error => {
                 errorContainer.innerHTML = 'Error: ' + error;
                 console.error('Error fetching data:', error);
             });
     });
 
-    // Function to fetch data from the API based on the selected payment method
+    // Function to fetch data from the API based on chosen payment method
     function fetchData(paymentMethod) {
-        fetch(`http://localhost:3000/payment-method?method=${paymentMethod}`)
+        fetch(`http://localhost:3000/payment-method?method=${encodeURIComponent(paymentMethod)}`)
             .then(response => {
                 if (!response.ok) {
+                    // Throw error if response didn't come through okay
                     throw new Error('Failed to fetch data');
                 }
                 return response.json();
@@ -72,11 +79,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert(`You've selected ${paymentMethod}`);
             })
             .catch(error => {
+                // Log any errors
                 console.error('Error fetching data:', error);
             });
     }
 
-    // Event listener for each payment method button
+    // Add click event listener to each payment method button
     document.querySelectorAll('.payment-method-button').forEach(button => {
         button.addEventListener('click', function (e) {
             e.preventDefault();
@@ -85,13 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    //  photo visibility
+    // Function to toggle photo visibility
     function togglePhotoVisibility(photoLink, photoContainer) {
         let isPhotoVisible = false;
 
         photoLink.addEventListener('click', function (event) {
             event.preventDefault();
 
+            // Toggle visibility on click
             if (isPhotoVisible) {
                 photoContainer.style.display = 'none';
                 isPhotoVisible = false;
@@ -109,23 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    //  photo visibility for drinks
-    const drinksPhotoLink = document.getElementById('photo-link');
-    const drinksPhotoContainer = document.getElementById('photo-container');
-    togglePhotoVisibility(drinksPhotoLink, drinksPhotoContainer);
-
-    //  photo visibility for adventures
-    const adventuresPhotoLink = document.getElementById('photo-link1');
-    const adventuresPhotoContainer = document.getElementById('photo-container1');
-    togglePhotoVisibility(adventuresPhotoLink, adventuresPhotoContainer);
-
-    //  photo visibility for transport
-    const transportPhotoLink = document.getElementById('photo-link2');
-    const transportPhotoContainer = document.getElementById('photo-container2');
-    togglePhotoVisibility(transportPhotoLink, transportPhotoContainer);
-
-    // photo visibility for games
-    const gamesPhotoLink = document.getElementById('photo-link3');
-    const gamesPhotoContainer = document.getElementById('photo-container3');
-    togglePhotoVisibility(gamesPhotoLink, gamesPhotoContainer);
+    // Get photo containers and links for each category and apply toggle function
+    ['drinks', 'adventures', 'transport', 'games'].forEach(category => {
+        const link = document.getElementById(`photo-link-${category}`);
+        const container = document.getElementById(`photo-container-${category}`);
+        togglePhotoVisibility(link, container);
+    });
 });
