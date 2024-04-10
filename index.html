@@ -11,6 +11,7 @@
     <!-- Font Awesome JS (consistent with version 6) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
+    <!--  CSS -->
     <link rel="stylesheet" href="index.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,7 @@
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navdiv">
             <div class="logo">EAZY-ROOMS<i class="fa-brands fa-airbnb fa-lg"></i>
@@ -28,9 +30,9 @@
                 <li><a href="https://www.linkedin.com/feed/">Contact</a></li>
             </ul>
         </div>
-
     </nav>
-    <!-- THE BANNER WITH THE FORM -->
+
+    <!-- Banner with Search Form -->
     <div class="banner">
         <h1>EAZY-ROOMS HOTEL BOOKING </h1>
         <p>The Best Rooms Available</p>
@@ -41,7 +43,7 @@
             <div id="search-results"></div>
             <div id="error_message"></div>
         </form>
-        <!-- PAYMENT METHODS HERE -->
+        <!-- Payment Methods  -->
         <form id="payment-method-form">
             <div>
                 <span1>Payment Means</span1>
@@ -50,24 +52,18 @@
             <button class="payment-method-button" data-paymentmethod="mobileMoney">Mobile Money</button>
             <button class="payment-method-button" data-paymentmethod="cashPayment">Cash Payment</button>
         </form>
-
-
     </div>
 
+    <!-- Container for Main Content -->
     <div class="container">
         <div class="content">
-            <div id="search-results"></div>
         </div>
     </div>
 
-
-
-
-
-
-    <!-- DRINKS CARD -->
+    <!-- Cards for Additional --> 
     <div class="containers1">
         <div class="row">
+            <!-- Free Drink Card -->
             <div class="slate1">
                 <div class="card shadow-lg border-0 p-4 custom-card">
                     <article class="service">
@@ -80,7 +76,7 @@
                     </article>
                 </div>
             </div>
-            <!-- ADVENTURES CARD -->
+            <!-- Adventures Card -->
             <div class="slate2">
                 <div class="card shadow-lg border-0 p-4">
                     <article class="service">
@@ -92,7 +88,7 @@
                     </article>
                 </div>
             </div>
-            <!-- TRANSPORT CARD -->
+            <!-- Transport Card -->
             <div class="slate3">
                 <div class="card shadow-lg border-0 p-4">
                     <article class="service">
@@ -104,7 +100,7 @@
                     </article>
                 </div>
             </div>
-            <!-- GAMES CARD -->
+            <!-- Games Card -->
             <div class="slate4">
                 <div class="card shadow-lg border-0 p-4">
                     <article class="service">
@@ -119,10 +115,11 @@
         </div>
     </div>
 
-    <!-- Footer obtained from another app with the like short explanations and links -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
+                <!-- Company Info Section -->
                 <div class="footer-col">
                     <h4>company</h4>
                     <ul>
@@ -132,6 +129,7 @@
                         <li><a href="#">affiliate program</a></li>
                     </ul>
                 </div>
+                <!-- Help Section -->
                 <div class="footer-col">
                     <h4>get help</h4>
                     <ul>
@@ -139,6 +137,7 @@
                         <li><a href="http://localhost:3000/payment-method">payment options</a></li>
                     </ul>
                 </div>
+                <!-- Online Booking Section -->
                 <div class="footer-col">
                     <h4>online booking</h4>
                     <ul>
@@ -148,6 +147,7 @@
                         <li><a href="#">extra services</a></li>
                     </ul>
                 </div>
+                <!-- Follow Us Section -->
                 <div class="footer-col">
                     <h4>follow us</h4>
                     <div class="social-links">
@@ -158,6 +158,7 @@
                 </div>
             </div>
         </div>
+        <!-- Copyright and Links -->
         <div class="bg-dark text-white d-flex d-row justify-content-around align-items-center flex-wrap">
             <div>
                 <p class="text-center pt-3">© 2024 EAZY-ROOMS Booking App. All Right Reserved</p>
@@ -172,7 +173,7 @@
             </div>
         </div>
     </footer>
-    <!-- JS FILE -->
+    <!-- JavaScript -->
     <script src="index.js"></script>
 </body>
 
