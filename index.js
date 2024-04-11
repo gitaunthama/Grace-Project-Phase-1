@@ -2,11 +2,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     let hotels = [
         { name: 'Palm Before Pine', price: 200, type: 'Suite', availability: 'true', photo: 'https://i.insider.com/5b50e40d7708e935033b7b68?width=1000&format=jpeg&auto=webpg' },
-        { name: 'Oceanside Escape', price: 150, type: 'Single-room', availability: 'true', photo: 'http://glitz.bangkokhotel24.com/data/Pics/OriginalPhoto/1172/117231/117231646/glitz-hotel-bangkok-pic-5.JPEG'},
+        { name: 'Oceanside Escape', price: 150, type: 'Single-room', availability: 'true', photo: 'https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/217323310.jpg?k=7a33f08f7f0b0af0dc5475052e96cef52a6266142a57fb4324137840a27f06f2&o=&s=1024x'},
         { name: 'Sunnyside Up', price: 250, type: 'Suite', availability: 'false', photo: 'https://i.insider.com/5b50e40d7708e935033b7b68?width=1000&format=jpeg&auto=webpg'},
         { name: 'Elite Palace', price: 100, type: 'Double-room', availability: 'true', photo: 'https://i.insider.com/5b50e40d7708e935033b7b68?width=1000&format=jpeg&auto=webpg'},
         { name: 'Sarova-w', price: 200, type: 'Suite', availability: 'true', photo: 'https://i.insider.com/5b50e40d7708e935033b7b68?width=1000&format=jpeg&auto=webpg'},
-        { name: 'Cape place', price: 150, type: 'Single-room', availability: 'true', photo: 'http://glitz.bangkokhotel24.com/data/Pics/OriginalPhoto/1172/117231/117231646/glitz-hotel-bangkok-pic-5.JPEG'},
+        { name: 'Cape place', price: 150, type: 'Single-room', availability: 'true', photo: 'https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/217323310.jpg?k=7a33f08f7f0b0af0dc5475052e96cef52a6266142a57fb4324137840a27f06f2&o=&s=1024x'},
         { name: 'Loung Place', price: 150, type: 'Double-room', availability: 'true', photo: 'https://i.insider.com/5b50e40d7708e935033b7b68?width=1000&format=jpeg&auto=webpg'},
         { name: 'Serena', price: 200, type: 'Suite', availability: 'true', photo: 'https://i.insider.com/5b50e40d7708e935033b7b68?width=1000&format=jpeg&auto=webpg'},
     ];
