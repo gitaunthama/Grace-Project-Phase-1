@@ -26,10 +26,10 @@ You use git clone to be able to download the documents in the GitHub and work wi
 Git
 
 ### Installation instructions
-Git clone  
+Git clone  git@github.com:gitaunthama/Grace-Project-Phase-1.git
 
 # Live Link
-[Git]
+[Git](https://gitaunthama.github.io/Grace-Project-Phase-1/)
 
 ## Technologies used
 HTML
