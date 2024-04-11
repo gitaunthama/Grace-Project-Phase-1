@@ -1,7 +1,6 @@
 // Wait till the document is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
   // Get the DOM elements needed
-// Let's assume this is your hotel data
 let hotels = [
     { name: 'Palm Before Pine', price: 200, type: 'Suite', availability: 'true'},
     { name: 'Oceanside Escape', price: 150, type: 'Single-room', availability: 'true', photo: ('http://glitz.bangkokhotel24.com/data/Pics/OriginalPhoto/1172/117231/117231646/glitz-hotel-bangkok-pic-5.JPEG')},
@@ -43,7 +42,26 @@ let hotels = [
       }
   });
 
-    // Add click event listener to each payment method button
+   
+    // Function to fetch data from the API based on the selected payment method
+    function fetchData(paymentMethod) {
+        fetch(`http://localhost:3000/payment-method?method=${paymentMethod}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(`You've Selected ${paymentMethod} }`);
+                alert(`You've selected ${paymentMethod}`);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    // Event listener for each payment method button
     document.querySelectorAll('.payment-method-button').forEach(button => {
         button.addEventListener('click', function (e) {
             e.preventDefault();
@@ -52,35 +70,33 @@ let hotels = [
         });
     });
 
-    // Function to toggle photo visibility
-    function togglePhotoVisibility(photoLink, photoContainer) {
-        let isPhotoVisible = false;
+   // Function to toggle photo visibility
+   function togglePhotoVisibility(photoLink, photoContainer) {
+    let isPhotoVisible = false;
 
-        photoLink.addEventListener('click', function (event) {
-            event.preventDefault();
+    photoLink.addEventListener('click', function (event) {
+        event.preventDefault();
 
-            // Toggle visibility on click
-            if (isPhotoVisible) {
-                photoContainer.style.display = 'none';
-                isPhotoVisible = false;
-            } else {
-                const photoUrl = this.href;
-                const photo = document.createElement('img');
-                photo.src = photoUrl;
+        if (isPhotoVisible) {
+            photoContainer.style.display = 'none';
+            isPhotoVisible = false;
+        } else {
+            const photoUrl = this.href;
+            const photo = document.createElement('img');
+            photo.src = photoUrl;
 
-                photoContainer.innerHTML = '';
-                photoContainer.appendChild(photo);
+            photoContainer.innerHTML = '';
+            photoContainer.appendChild(photo);
 
-                photoContainer.style.display = 'block';
-                isPhotoVisible = true;
-            }
-        });
-    }
-
-    // Get photo containers and links for each category and apply toggle function
-    ['drinks', 'adventures', 'transport', 'games'].forEach(category => {
-        const link = document.getElementById(`photo-link-${category}`);
-        const container = document.getElementById(`photo-container-${category}`);
-        togglePhotoVisibility(link, container);
+            photoContainer.style.display = 'block';
+            isPhotoVisible = true;
+        }
     });
+}
+
+// Toggle photo visibility for each photo link
+togglePhotoVisibility(document.getElementById('photo-link'), document.getElementById('photo-container'));
+togglePhotoVisibility(document.getElementById('photo-link1'), document.getElementById('photo-container1'));
+togglePhotoVisibility(document.getElementById('photo-link2'), document.getElementById('photo-container2'));
+togglePhotoVisibility(document.getElementById('photo-link3'), document.getElementById('photo-container3'));
 });
