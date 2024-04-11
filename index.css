@@ -46,7 +46,6 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: sticky;
 }
 
 .banner h1 {
@@ -122,7 +121,7 @@ li {
 
 .content {
   height: 1000px;
-  background-image: url(/assets/images/background.webp);
+  background-image: url(./assets/images/background.webp);
   padding: 20px;
 }
 
