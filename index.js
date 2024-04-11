@@ -80,16 +80,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     
     
-   
+   // Add click event listener to each payment method button
+
     // Function to fetch data from the API based on the selected payment method
-    function fetchData(paymentMethod) {
+    function  fetchData(paymentMethod) {
         fetch(`http://localhost:3000/payment-method?method=${paymentMethod}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch data');
-                }
-                return response.json();
-            })
+            // .then(response => {
+            //     if (!response.ok) {
+            //         throw new Error('Failed to fetch data');
+            //     }
+            //     return response.json();
+            // })
             .then(data => {
                 console.log(`You've Selected ${paymentMethod} }`);
                 alert(`You've selected ${paymentMethod}`);
@@ -99,15 +100,16 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    // Event listener for each payment method button
     document.querySelectorAll('.payment-method-button').forEach(button => {
         button.addEventListener('click', function (e) {
             e.preventDefault();
-            const paymentMethod = this.dataset.paymentmethod;
+            const paymentMethod = this.dataset.paymentmethod; // Update to dataset.paymentmethod
+    
+            // Call the fetchData function with the selected payment method
             fetchData(paymentMethod);
         });
     });
-
+    
    // Function to toggle photo visibility
    function togglePhotoVisibility(photoLink, photoContainer) {
     let isPhotoVisible = false;
