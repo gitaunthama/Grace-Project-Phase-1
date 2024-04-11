@@ -279,3 +279,37 @@ ul {
     width: 100%;
   }
 }
+
+.hotel-container {
+  display: inline-block;
+  width: calc(50% - 10px); 
+  margin: 5px;
+  /* border: px  rgba(0, 0, 0, 0.5); */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.hotel-photo {
+  max-width: 300px;
+  height: 200px;
+  display: inline;
+  margin-bottom: 10px;
+}
+
+.hotel-details {
+  font-size: 14px;
+  color: palevioletred;
+}
+
+.hotel-name {
+  font-weight: bold;
+  color:palevioletred;
+  margin-top:5px ;
+display: flex;
+}
+
+.hotel-price,
+.hotel-type {
+  margin-top: 5px;
+  color: palevioletred;
+}
