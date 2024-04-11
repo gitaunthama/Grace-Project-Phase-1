@@ -14,6 +14,3 @@ Serving ./public directory if it exists
 Endpoints:
 http://localhost:3000/hotels
 http://localhost:3000/payment-method
- 
-
-  Basically accorfding to my research this page enable the json server to work even without the watch command

@@ -140,3 +140,34 @@ togglePhotoVisibility(document.getElementById('photo-link1'), document.getElemen
 togglePhotoVisibility(document.getElementById('photo-link2'), document.getElementById('photo-container2'));
 togglePhotoVisibility(document.getElementById('photo-link3'), document.getElementById('photo-container3'));
 });
+
+
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+
+// Enable CORS with options to include the Access-Control-Allow-Private-Network header
+const corsOptions = {
+  origin: '*', // Set this to your allowed origins
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  exposedHeaders: ['Access-Control-Allow-Private-Network'], // Include the header here
+};
+
+app.use(cors(corsOptions));
+
+// Define your routes and start the server
+// Example route:
+app.get('/payment-method', (req, res) => {
+  // Your code to handle the request
+  res.send(/* Your response data */);
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
