@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     let form = document.getElementById('searchform');
     let search = document.getElementById('search');
-    let searchResults = document.getElementById('search-results');
+    let searchResultsSection = document.getElementById('search-results-section'); // New line
     let errorMessage = document.getElementById('error_message');
     
     // Function to create and display hotel elements
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create a container for the hotel details
         let hotelContainer = document.createElement('div');
         hotelContainer.classList.add('hotel-container');
-    
+
         // Create an image element for the hotel photo
         let photoElement = document.createElement('img');
         photoElement.src = hotel.photo;
@@ -44,26 +44,46 @@ document.addEventListener('DOMContentLoaded', function () {
         let typeElement = document.createElement('p');
         typeElement.textContent = `Type: ${hotel.type}`;
         typeElement.classList.add('hotel-type');
+
+        let availabilityElement = document.createElement('p');
+        availabilityElement.textContent = `Availability: ${hotel.availability}`;
+        availabilityElement.classList.add('hotel-availability');
+
+          // Create a button element for booking
+          let bookButton = document.createElement('button');
+          if (hotel.availability === 'true') {
+              bookButton.textContent = 'Book';
+              bookButton.addEventListener('click', function() {
+                  bookButton.textContent = 'Booked';
+                  bookButton.disabled = true; // Disable the button after booking
+              });
+          } else {
+              bookButton.textContent = 'Not Available';
+              bookButton.disabled = true;
+          }
     
         // Append photo and text details to the hotel container
         detailsContainer.appendChild(nameElement);
         detailsContainer.appendChild(priceElement);
         detailsContainer.appendChild(typeElement);
+        detailsContainer.appendChild(availabilityElement);
+        detailsContainer.appendChild(bookButton);
     
         hotelContainer.appendChild(photoElement);
         hotelContainer.appendChild(detailsContainer);
     
         // Append the hotel container to the search results container
-        searchResults.insertBefore(hotelContainer, searchResults.firstChild); // Insert at the top
-    }
+        searchResultsSection.insertBefore(hotelContainer, searchResultsSection.firstChild); 
     
+    }
+
     // Event listener for form submission
     form.addEventListener('submit', function(event) {
-        event.preventDefault();
+        event.preventDefault(); //prevent deafult submissions
     
         let searchQuery = search.value.trim().toLowerCase();
     
-        searchResults.innerHTML = ''; // Clear previous results
+        searchResultsSection.innerHTML = ''; // Clear previous results
         errorMessage.innerHTML = '';
     
         // Filter the hotels array based on the search Query
@@ -78,11 +98,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
-    
+});
+
     
    // Add click event listener to each payment method button
-
-    // Function to fetch data from the API based on the selected payment method
+   // Function to fetch data from the API based on the selected payment method
     function  fetchData(paymentMethod) {
         fetch(`http://localhost:3000/payment-method?method=${paymentMethod}`)
             // .then(response => {
@@ -139,6 +159,6 @@ togglePhotoVisibility(document.getElementById('photo-link'), document.getElement
 togglePhotoVisibility(document.getElementById('photo-link1'), document.getElementById('photo-container1'));
 togglePhotoVisibility(document.getElementById('photo-link2'), document.getElementById('photo-container2'));
 togglePhotoVisibility(document.getElementById('photo-link3'), document.getElementById('photo-container3'));
-});
+
 
 
